@@ -249,6 +249,13 @@ ul{list-style:none}
   .about-visual{grid-template-columns:1fr}
 }
 </style>
+<style>
+.hero-grid-1{position:absolute;top:-100px;right:-100px;width:500px;height:500px;opacity:.06;pointer-events:none;z-index:0;transform:rotate(15deg)}
+.hero-grid-2{position:absolute;bottom:-50px;left:-50px;width:400px;height:400px;opacity:.04;pointer-events:none;z-index:0;transform:rotate(-10deg)}
+.diffs-grid-1{position:absolute;top:-80px;right:-80px;width:400px;height:400px;opacity:.04;pointer-events:none;z-index:1;transform:rotate(20deg)}
+.diffs-grid-2{position:absolute;bottom:-60px;left:-60px;width:350px;height:350px;opacity:.03;pointer-events:none;z-index:1;transform:rotate(-15deg)}
+.about-grid-1{position:absolute;top:-50px;right:-50px;width:300px;height:300px;opacity:.04;pointer-events:none;z-index:0;transform:rotate(25deg)}
+</style>
 </head>
 <body>
 
@@ -417,6 +424,8 @@ ul{list-style:none}
 
 <!-- DIFERENCIAIS -->
 <section class="section diffs" id="diferenciais">
+  <img src="assets/grid-1.svg" alt="" class="diffs-grid-1" aria-hidden="true">
+  <img src="assets/grid-2.svg" alt="" class="diffs-grid-2" aria-hidden="true">
   <div class="container">
     <div class="section-header light reveal">
       <span class="section-tag" style="background:rgba(255,255,255,.1);color:var(--blue-100)">Por que a Dialos</span>
