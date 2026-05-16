@@ -15,17 +15,27 @@
    DIALOS v2 — Design System
    ============================================= */
 :root {
-  --navy-950: #060e1c;
-  --navy-900: #0b1628;
-  --navy-800: #101f38;
-  --navy-700: #162d50;
-  --navy-600: #1e3f6e;
-  --navy-500: #2a5090;
-  --blue-500: #3b6cb8;
-  --blue-400: #5484ed;
-  --blue-300: #7aa3f0;
-  --blue-200: #a8c4f7;
-  --blue-50: #eef4fd;
+  --oxford: #0C2340;
+  --estrato: #005670;
+  --sintese: #6399AE;
+  --polar: #A6BBC8;
+  --sal: #FAFAFA;
+  --oxford-rgb: 12,35,64;
+  --estrato-rgb: 0,86,112;
+  --sintese-rgb: 99,153,174;
+  --polar-rgb: 166,187,200;
+  --sal-rgb: 250,250,250;
+  --navy-950: #060d18;
+  --navy-900: #0C2340;
+  --navy-800: #0f2e50;
+  --navy-700: #133a60;
+  --navy-600: #005670;
+  --blue-500: #2a6b8a;
+  --blue-400: #6399AE;
+  --blue-300: #85b3c5;
+  --blue-200: #A6BBC8;
+  --blue-100: #d0dfe8;
+  --blue-50: #e8f0f5;
   --neutral-900: #111;
   --neutral-800: #222;
   --neutral-700: #333;
@@ -35,7 +45,7 @@
   --neutral-300: #bbb;
   --neutral-200: #ddd;
   --neutral-100: #eee;
-  --neutral-50: #f8f9fb;
+  --neutral-50: #FAFAFA;
   --font: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --radius: 12px;
@@ -57,10 +67,10 @@ ul{list-style:none}
 .container{max-width:var(--container);margin:0 auto;padding:0 24px}
 
 /* utilities */
-.gradient-text{background:linear-gradient(135deg,var(--blue-400),var(--blue-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-text{background:linear-gradient(135deg,var(--sintese),var(--polar));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section{padding:100px 0}
 .section-header{text-align:center;max-width:680px;margin:0 auto 56px}
-.section-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-500);background:var(--blue-50);padding:6px 16px;border-radius:100px;margin-bottom:16px}
+.section-tag{color:var(--estrato);background:var(--blue-50);display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--estrato);background:var(--blue-50);padding:6px 16px;border-radius:100px;margin-bottom:16px}
 .section-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.25;margin-bottom:16px;color:var(--navy-900)}
 .section-header p{color:var(--neutral-500);font-size:1rem;max-width:520px;margin:0 auto}
 .section-header.light h2{color:#fff}
@@ -90,12 +100,12 @@ ul{list-style:none}
 .navbar .logo img{height:32px;transition:var(--transition)}
 .nav-links{display:flex;align-items:center;gap:32px}
 .nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.7);transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--blue-400);transition:width .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--sintese);transition:width .3s}
 .nav-links a:hover{color:#fff}
 .nav-links a:hover::after{width:100%}
-.nav-links .nav-cta{background:var(--blue-400);color:#fff;padding:10px 24px;border-radius:100px;font-weight:600}
+.nav-links .nav-cta{background:var(--sintese);color:#fff;padding:10px 24px;border-radius:100px;font-weight:600}
 .nav-links .nav-cta::after{display:none}
-.nav-links .nav-cta:hover{background:var(--blue-500);transform:translateY(-1px)}
+.nav-links .nav-cta:hover{background:var(--estrato);transform:translateY(-1px)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:1001}
 .nav-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:var(--transition)}
 .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -104,12 +114,12 @@ ul{list-style:none}
 
 /* ============ HERO ============ */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;background:var(--navy-950);overflow:hidden;padding:120px 0 80px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(84,132,237,.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(84,132,237,.04),transparent 60%)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(var(--sintese-rgb),.12),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(var(--estrato-rgb),.08),transparent 60%)}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-300);background:rgba(84,132,237,.1);border:1px solid rgba(84,132,237,.2);padding:8px 16px;border-radius:100px;margin-bottom:24px}
-.hero-tag span{color:var(--blue-200)}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--polar);background:rgba(84,132,237,.1);border:1px solid rgba(84,132,237,.2);padding:8px 16px;border-radius:100px;margin-bottom:24px}
+.hero-tag span{color:var(--blue-100)}
 .hero h1{font-family:var(--font);font-size:clamp(2rem,5vw,3.6rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:20px}
-.hero h1 .gradient-text{background:linear-gradient(135deg,#5484ed,#7aa3f0,#a8c4f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .gradient-text{background:linear-gradient(135deg,var(--sintese),var(--polar),#d0dfe8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero p{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:480px;margin-bottom:36px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
 .hero-stats{display:flex;gap:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,.06)}
@@ -141,14 +151,14 @@ ul{list-style:none}
 .about-text>p{color:var(--neutral-500);margin-bottom:32px}
 .about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .about-value{background:#fff;border:1px solid var(--neutral-100);border-radius:var(--radius);padding:20px;transition:var(--transition)}
-.about-value:hover{border-color:var(--blue-200);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.about-value:hover{border-color:var(--blue-100);box-shadow:var(--shadow-md);transform:translateY(-2px)}
 .about-value .icon{font-size:1.5rem;margin-bottom:8px}
 .about-value h4{font-size:.95rem;font-weight:600;margin-bottom:4px;color:var(--navy-900)}
 .about-value p{font-size:.85rem;color:var(--neutral-500);line-height:1.5}
 
 .about-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .about-visual-card{background:var(--navy-900);border-radius:var(--radius-lg);padding:32px 24px;color:#fff;text-align:center}
-.about-visual-card .num{font-family:var(--font);font-size:2.5rem;font-weight:800;color:var(--blue-400);line-height:1}
+.about-visual-card .num{font-family:var(--font);font-size:2.5rem;font-weight:800;color:var(--sintese);line-height:1}
 .about-visual-card .label{font-size:.82rem;color:rgba(255,255,255,.5);margin-top:6px}
 .about-visual-card.purple{background:linear-gradient(135deg,var(--navy-800),var(--navy-700))}
 .about-visual-card.glow{border:1px solid rgba(84,132,237,.15);background:rgba(11,22,40,.6);backdrop-filter:blur(8px)}
@@ -156,7 +166,7 @@ ul{list-style:none}
 /* ============ SERVICES ============ */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .service-card{background:#fff;border:1px solid var(--neutral-100);border-radius:var(--radius-lg);padding:32px 24px;transition:var(--transition);position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-400),var(--blue-200));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sintese),var(--blue-100));transform:scaleX(0);transform-origin:left;transition:transform .5s}
 .service-card:hover::before{transform:scaleX(1)}
 .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--blue-100)}
 .service-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-50);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px}
@@ -185,7 +195,7 @@ ul{list-style:none}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .contact-form{display:flex;flex-direction:column;gap:14px}
 .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px 18px;font-family:var(--font-body);font-size:.9rem;border:1.5px solid var(--neutral-200);border-radius:var(--radius);background:#fff;transition:var(--transition);outline:none}
-.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--blue-400);box-shadow:0 0 0 4px rgba(84,132,237,.1)}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--sintese);box-shadow:0 0 0 4px rgba(84,132,237,.1)}
 .contact-form textarea{resize:vertical;min-height:110px}
 .contact-info{display:flex;flex-direction:column;gap:14px}
 .contact-item{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--neutral-100);border-radius:var(--radius);padding:18px 20px;transition:var(--transition)}
@@ -204,7 +214,7 @@ ul{list-style:none}
 .footer-links h5{color:#fff;font-family:var(--font);font-size:.85rem;font-weight:600;margin-bottom:16px}
 .footer-links ul{display:flex;flex-direction:column;gap:10px}
 .footer-links a{font-size:.85rem;transition:color .2s}
-.footer-links a:hover{color:var(--blue-300)}
+.footer-links a:hover{color:var(--polar)}
 .footer-bottom{text-align:center;font-size:.8rem;opacity:.4}
 
 /* ============ RESPONSIVE ============ */
@@ -409,7 +419,7 @@ ul{list-style:none}
 <section class="section diffs" id="diferenciais">
   <div class="container">
     <div class="section-header light reveal">
-      <span class="section-tag" style="background:rgba(255,255,255,.1);color:var(--blue-200)">Por que a Dialos</span>
+      <span class="section-tag" style="background:rgba(255,255,255,.1);color:var(--blue-100)">Por que a Dialos</span>
       <h2 style="color:#fff">Diferenciais que <span class="gradient-text">fazem a diferença</span></h2>
     </div>
     <div class="diffs-grid">
