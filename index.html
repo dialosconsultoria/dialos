@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dialos — Consultoria em Segurança e Saúde no Trabalho</title>
+<meta name="description" content="Dialos: consultoria em SST, QSMS, SESMT e CIPA. Descomplicamos a segurança do trabalho para sua empresa.">
+<meta name="theme-color" content="#0b1628">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   DIALOS v2 — Design System
+   ============================================= */
+:root {
+  --navy-950: #060e1c;
+  --navy-900: #0b1628;
+  --navy-800: #101f38;
+  --navy-700: #162d50;
+  --navy-600: #1e3f6e;
+  --navy-500: #2a5090;
+  --blue-500: #3b6cb8;
+  --blue-400: #5484ed;
+  --blue-300: #7aa3f0;
+  --blue-200: #a8c4f7;
+  --blue-50: #eef4fd;
+  --neutral-900: #111;
+  --neutral-800: #222;
+  --neutral-700: #333;
+  --neutral-600: #555;
+  --neutral-500: #777;
+  --neutral-400: #999;
+  --neutral-300: #bbb;
+  --neutral-200: #ddd;
+  --neutral-100: #eee;
+  --neutral-50: #f8f9fb;
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.1);
+  --shadow-xl: 0 24px 60px rgba(0,0,0,.15);
+  --container: 1100px;
+  --transition: all .4s cubic-bezier(.25,.46,.45,.94);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font-body);color:var(--neutral-800);background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* utilities */
+.gradient-text{background:linear-gradient(135deg,var(--blue-400),var(--blue-300));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section{padding:100px 0}
+.section-header{text-align:center;max-width:680px;margin:0 auto 56px}
+.section-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-500);background:var(--blue-50);padding:6px 16px;border-radius:100px;margin-bottom:16px}
+.section-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;line-height:1.25;margin-bottom:16px;color:var(--navy-900)}
+.section-header p{color:var(--neutral-500);font-size:1rem;max-width:520px;margin:0 auto}
+.section-header.light h2{color:#fff}
+.section-header.light p{color:rgba(255,255,255,.6)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;font-family:var(--font);font-size:.9rem;font-weight:600;border-radius:100px;border:none;cursor:pointer;transition:var(--transition);position:relative;overflow:hidden}
+.btn-primary{background:var(--navy-900);color:#fff}
+.btn-primary:hover{background:var(--navy-700);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-primary i{font-size:1.1em}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-light{background:#fff;color:var(--navy-900)}
+.btn-light:hover{background:var(--blue-50);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+
+/* reveal animations */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ============ NAVBAR ============ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition)}
+.navbar.scrolled{background:rgba(11,22,40,.97);backdrop-filter:blur(20px);padding:10px 0;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between}
+.navbar .logo img{height:32px;transition:var(--transition)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.7);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--blue-400);transition:width .3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-links .nav-cta{background:var(--blue-400);color:#fff;padding:10px 24px;border-radius:100px;font-weight:600}
+.nav-links .nav-cta::after{display:none}
+.nav-links .nav-cta:hover{background:var(--blue-500);transform:translateY(-1px)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:1001}
+.nav-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:var(--transition)}
+.nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ============ HERO ============ */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;background:var(--navy-950);overflow:hidden;padding:120px 0 80px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(84,132,237,.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(84,132,237,.04),transparent 60%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-300);background:rgba(84,132,237,.1);border:1px solid rgba(84,132,237,.2);padding:8px 16px;border-radius:100px;margin-bottom:24px}
+.hero-tag span{color:var(--blue-200)}
+.hero h1{font-family:var(--font);font-size:clamp(2rem,5vw,3.6rem);font-weight:800;line-height:1.1;color:#fff;margin-bottom:20px}
+.hero h1 .gradient-text{background:linear-gradient(135deg,#5484ed,#7aa3f0,#a8c4f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:480px;margin-bottom:36px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,.06)}
+.hero-stat h3{font-family:var(--font);font-size:1.8rem;font-weight:700;color:#fff;line-height:1}
+.hero-stat p{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:0;margin-top:4px}
+
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px}
+.hero-glow{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(84,132,237,.15),transparent 70%);border-radius:50%;animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+.hero-card-group{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px;width:100%;max-width:380px}
+.hero-card{background:rgba(255,255,255,.04);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:24px;transition:var(--transition)}
+.hero-card:hover{background:rgba(255,255,255,.07);border-color:rgba(84,132,237,.2);transform:translateY(-2px)}
+.hero-card-top{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.hero-card .icon{width:40px;height:40px;border-radius:10px;background:rgba(84,132,237,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.hero-card h4{font-family:var(--font);font-size:.9rem;font-weight:600;color:#fff}
+.hero-card p{font-size:.82rem;color:rgba(255,255,255,.45);margin:0}
+
+/* glitch grid */
+.hero-grid-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hero-grid-lines .line{position:absolute;width:1px;height:100%;background:linear-gradient(to bottom,transparent,rgba(84,132,237,.05),transparent)}
+.hero-grid-lines .line:nth-child(1){left:20%}
+.hero-grid-lines .line:nth-child(2){left:50%}
+.hero-grid-lines .line:nth-child(3){left:80%}
+
+/* ============ ABOUT ============ */
+.about{background:var(--neutral-50)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text h2{font-family:var(--font);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;line-height:1.25;color:var(--navy-900);margin:16px 0 20px}
+.about-text>p{color:var(--neutral-500);margin-bottom:32px}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-value{background:#fff;border:1px solid var(--neutral-100);border-radius:var(--radius);padding:20px;transition:var(--transition)}
+.about-value:hover{border-color:var(--blue-200);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.about-value .icon{font-size:1.5rem;margin-bottom:8px}
+.about-value h4{font-size:.95rem;font-weight:600;margin-bottom:4px;color:var(--navy-900)}
+.about-value p{font-size:.85rem;color:var(--neutral-500);line-height:1.5}
+
+.about-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-visual-card{background:var(--navy-900);border-radius:var(--radius-lg);padding:32px 24px;color:#fff;text-align:center}
+.about-visual-card .num{font-family:var(--font);font-size:2.5rem;font-weight:800;color:var(--blue-400);line-height:1}
+.about-visual-card .label{font-size:.82rem;color:rgba(255,255,255,.5);margin-top:6px}
+.about-visual-card.purple{background:linear-gradient(135deg,var(--navy-800),var(--navy-700))}
+.about-visual-card.glow{border:1px solid rgba(84,132,237,.15);background:rgba(11,22,40,.6);backdrop-filter:blur(8px)}
+
+/* ============ SERVICES ============ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:#fff;border:1px solid var(--neutral-100);border-radius:var(--radius-lg);padding:32px 24px;transition:var(--transition);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-400),var(--blue-200));transform:scaleX(0);transform-origin:left;transition:transform .5s}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--blue-100)}
+.service-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-50);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px}
+.service-card h3{font-family:var(--font);font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--navy-900)}
+.service-card p{font-size:.88rem;color:var(--neutral-500);line-height:1.6}
+
+/* ============ DIFFERENTIALS ============ */
+.diffs{background:var(--navy-900);position:relative;overflow:hidden}
+.diffs::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(84,132,237,.05),transparent 60%)}
+.diffs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:2}
+.diff-card{text-align:center;padding:32px 16px;}
+.diff-icon{width:56px;height:56px;border-radius:16px;background:rgba(84,132,237,.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 16px;transition:var(--transition)}
+.diff-card:hover .diff-icon{background:rgba(84,132,237,.2);transform:scale(1.05)}
+.diff-card h4{font-family:var(--font);font-size:.95rem;font-weight:600;color:#fff;margin-bottom:8px}
+.diff-card p{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* ============ CTA ============ */
+.cta{background:var(--neutral-50)}
+.cta-card{background:linear-gradient(135deg,var(--navy-900),var(--navy-700));border-radius:var(--radius-xl);padding:64px 48px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-card::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(84,132,237,.08),transparent 70%);top:-200px;right:-200px;border-radius:50%}
+.cta-card h2{font-family:var(--font);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;margin-bottom:12px;position:relative}
+.cta-card p{opacity:.6;margin-bottom:28px;font-size:.95rem;position:relative}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--neutral-50)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px 18px;font-family:var(--font-body);font-size:.9rem;border:1.5px solid var(--neutral-200);border-radius:var(--radius);background:#fff;transition:var(--transition);outline:none}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--blue-400);box-shadow:0 0 0 4px rgba(84,132,237,.1)}
+.contact-form textarea{resize:vertical;min-height:110px}
+.contact-info{display:flex;flex-direction:column;gap:14px}
+.contact-item{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--neutral-100);border-radius:var(--radius);padding:18px 20px;transition:var(--transition)}
+.contact-item:hover{border-color:var(--blue-100);box-shadow:var(--shadow-md)}
+.contact-item .icon{width:44px;height:44px;border-radius:12px;background:var(--blue-50);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-item .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--neutral-400);font-weight:600}
+.contact-item .value{font-size:.95rem;font-weight:500;color:var(--navy-900)}
+.contact-note{background:var(--blue-50)!important;border-color:var(--blue-100)!important}
+.contact-note .value{font-weight:400!important;color:var(--blue-600)!important;font-size:.85rem!important}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy-950);color:rgba(255,255,255,.6);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:30px}
+.footer-logo img{height:28px;margin-bottom:12px}
+.footer-brand p{font-size:.85rem;line-height:1.7;max-width:280px}
+.footer-links h5{color:#fff;font-family:var(--font);font-size:.85rem;font-weight:600;margin-bottom:16px}
+.footer-links ul{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:.85rem;transition:color .2s}
+.footer-links a:hover{color:var(--blue-300)}
+.footer-bottom{text-align:center;font-size:.8rem;opacity:.4}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .diffs-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:absolute;top:0;left:0;right:0;background:rgba(11,22,40,.98);backdrop-filter:blur(20px);flex-direction:column;padding:90px 24px 40px;gap:20px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-links.open{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero p{margin:0 auto 36px}
+  .hero-actions{justify-content:center}
+  .hero-stats{justify-content:center}
+  .hero-visual{min-height:auto}
+  .hero-card-group{max-width:100%}
+  .hero-card-top{justify-content:center}
+  .hero-card{text-align:center}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-values{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .diffs-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .section{padding:60px 0}
+  .cta-card{padding:40px 24px}
+}
+@media(max-width:480px){
+  .hero-stats{flex-direction:column;gap:20px;align-items:center}
+  .about-visual{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="#" class="logo"><img src="assets/logo.jpg" alt="Dialos"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-lines">
+    <div class="line"></div><div class="line"></div><div class="line"></div>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag reveal">Consultoria em SST <span>— desde 2016</span></div>
+        <h1 class="reveal reveal-delay-1">Segurança do trabalho<br><span class="gradient-text">descomplicada.</span></h1>
+        <p class="reveal reveal-delay-2">Transformamos a gestão de segurança ocupacional em um diferencial estratégico para sua empresa — com simplicidade, inovação e eficiência.</p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="#contato" class="btn btn-primary">Solicitar Diagnóstico Gratuito</a>
+          <a href="#servicos" class="btn btn-outline">Conhecer Serviços</a>
+        </div>
+        <div class="hero-stats reveal reveal-delay-4">
+          <div class="hero-stat"><h3>120+</h3><p>Empresas atendidas</p></div>
+          <div class="hero-stat"><h3>98%</h3><p>Conformidade legal</p></div>
+          <div class="hero-stat"><h3>Todos os estados</h3><p>Atendimento remoto</p></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="hero-glow"></div>
+        <div class="hero-card-group">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="icon">📋</div>
+              <div><h4>Documentos Técnicos</h4></div>
+            </div>
+            <p>PPRA, PCMSO, LTCAT, PGR — tudo em conformidade com as NRs</p>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="icon">🏢</div>
+              <div><h4>SESMT & CIPA</h4></div>
+            </div>
+            <p>Implementação completa do Services Especializados</p>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="icon">🎓</div>
+              <div><h4>Treinamentos</h4></div>
+            </div>
+            <p>Cursos práticos e personalizados, presenciais ou remotos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="section-tag">Sobre Nós</span>
+        <h2>Segurança que faz sentido,<br><span class="gradient-text">não só burocracia.</span></h2>
+        <p>A Dialos nasceu para descomplicar a segurança do trabalho nas empresas. Não somos mais uma consultoria burocrática — somos parceiros na construção de uma cultura de segurança real, com atendimento personalizado e linguagem clara.</p>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="icon">🌿</div>
+            <h4>Simplicidade</h4>
+            <p>Transformamos o complexo em acessível.</p>
+          </div>
+          <div class="about-value">
+            <div class="icon">⚡</div>
+            <h4>Inovação</h4>
+            <p>Olhamos para o que existe com novos olhos.</p>
+          </div>
+          <div class="about-value">
+            <div class="icon">🎯</div>
+            <h4>Eficiência</h4>
+            <p>Máximo de resultados, mínimo de desperdício.</p>
+          </div>
+          <div class="about-value">
+            <div class="icon">🤝</div>
+            <h4>Confiança</h4>
+            <p>Parceria real, não só prestação de serviço.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal reveal-delay-1">
+        <div class="about-visual-card purple">
+          <div class="num">10+</div>
+          <div class="label">Anos de experiência</div>
+        </div>
+        <div class="about-visual-card glow">
+          <div class="num">100%</div>
+          <div class="label">Conformidade NRs</div>
+        </div>
+        <div class="about-visual-card glow">
+          <div class="num">Online</div>
+          <div class="label">Consultoria remota</div>
+        </div>
+        <div class="about-visual-card purple">
+          <div class="num">🔒</div>
+          <div class="label">Marca registrada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Nossos Serviços</span>
+      <h2>Soluções completas em <span class="gradient-text">segurança do trabalho</span></h2>
+      <p>Da documentação à implementação, cuidamos de tudo para sua empresa estar em conformidade.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">📋</div>
+        <h3>Consultoria em QSMS</h3>
+        <p>Gestão integrada de Qualidade, Segurança, Meio Ambiente e Saúde ocupacional.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">📄</div>
+        <h3>Documentos Técnicos</h3>
+        <p>PPRA, PCMSO, LTCAT, PGR, laudos e relatórios de conformidade com as NRs.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🏢</div>
+        <h3>Implementação SESMT</h3>
+        <p>Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho completo.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">👥</div>
+        <h3>Implementação CIPA</h3>
+        <p>Da formação à gestão da Comissão Interna de Prevenção de Acidentes.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🎓</div>
+        <h3>Treinamentos</h3>
+        <p>Cursos práticos e personalizados, presenciais ou remotos, sob medida.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🌐</div>
+        <h3>Consultoria Online</h3>
+        <p>Atendimento remoto com a mesma qualidade do presencial, em todo o Brasil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="section diffs" id="diferenciais">
+  <div class="container">
+    <div class="section-header light reveal">
+      <span class="section-tag" style="background:rgba(255,255,255,.1);color:var(--blue-200)">Por que a Dialos</span>
+      <h2 style="color:#fff">Diferenciais que <span class="gradient-text">fazem a diferença</span></h2>
+    </div>
+    <div class="diffs-grid">
+      <div class="diff-card reveal reveal-delay-1">
+        <div class="diff-icon">🤝</div>
+        <h4>Atendimento Personalizado</h4>
+        <p>Cada empresa é única. Nosso serviço é desenhado sob medida para sua realidade.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-2">
+        <div class="diff-icon">📱</div>
+        <h4>Alcance Nacional</h4>
+        <p>Consultoria online com a mesma qualidade do presencial, em qualquer lugar do Brasil.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-3">
+        <div class="diff-icon">🔒</div>
+        <h4>Marca Registrada</h4>
+        <p>Nome protegido juridicamente. Segurança também no aspecto legal da parceria.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-4">
+        <div class="diff-icon">🧠</div>
+        <h4>Linguagem Simples</h4>
+        <p>Explicamos SST em português claro — sem juridiquês nem burocracia desnecessária.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="container reveal">
+    <div class="cta-card">
+      <h2>Quer saber se sua empresa está em conformidade?</h2>
+      <p>Solicite um diagnóstico gratuito e descubra os pontos de atenção da sua gestão de SST.</p>
+      <a href="#contato" class="btn btn-light btn-lg">Solicitar Diagnóstico Gratuito</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="section" id="contato">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Contato</span>
+      <h2>Vamos conversar <span class="gradient-text">sobre segurança</span></h2>
+      <p>Preencha o formulário ou fale diretamente pelo WhatsApp.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <input type="tel" placeholder="Seu WhatsApp">
+        <select required>
+          <option value="">Serviço de interesse</option>
+          <option>Consultoria QSMS</option>
+          <option>Documentos Técnicos</option>
+          <option>Implementação SESMT</option>
+          <option>Implementação CIPA</option>
+          <option>Treinamentos</option>
+          <option>Diagnóstico Gratuito</option>
+          <option>Outro</option>
+        </select>
+        <textarea rows="4" placeholder="Conte um pouco sobre sua necessidade"></textarea>
+        <button type="submit" class="btn btn-primary" style="justify-content:center;width:100%">Enviar Mensagem</button>
+      </form>
+      <div class="contact-info reveal reveal-delay-1">
+        <div class="contact-item">
+          <div class="icon">📧</div>
+          <div>
+            <div class="label">E-mail</div>
+            <div class="value">carlos@dialos.com.br</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">💬</div>
+          <div>
+            <div class="label">WhatsApp</div>
+            <div class="value">(22) 9 9983-0246</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">🌐</div>
+          <div>
+            <div class="label">Instagram</div>
+            <div class="value">@dialos.consultoria</div>
+          </div>
+        </div>
+        <div class="contact-item contact-note">
+          <div class="icon">🌱</div>
+          <div>
+            <div class="value">Atendimento online em todo Brasil. Presencial sob consulta.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo"><img src="assets/logo.jpg" alt="Dialos"></a>
+        <p>Consultoria em Segurança e Saúde no Trabalho. Descomplicando o essencial.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="#servicos">Consultoria QSMS</a></li>
+          <li><a href="#servicos">Documentos Técnicos</a></li>
+          <li><a href="#servicos">SESMT e CIPA</a></li>
+          <li><a href="#servicos">Treinamentos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Dialos</h5>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Atendimento</h5>
+        <ul>
+          <li><a href="mailto:carlos@dialos.com.br">carlos@dialos.com.br</a></li>
+          <li><a href="#">(22) 9 9983-0246</a></li>
+          <li><a href="#">@dialos.consultoria</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dialos Consultoria. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// === Navbar scroll ===
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>40);
+});
+
+// === Mobile menu ===
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{
+  toggle.classList.toggle('active');
+  links.classList.toggle('open');
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  toggle.classList.remove('active');
+  links.classList.remove('open');
+}));
+
+// === Reveal Animations ===
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// === Contact Form ===
+document.getElementById('contactForm').addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  const f=e.target,btn=f.querySelector('button');
+  btn.textContent='Enviando...';btn.disabled=true;
+  const data={
+    name:f.querySelector('input[type="text"]').value,
+    email:f.querySelector('input[type="email"]').value,
+    phone:f.querySelector('input[type="tel"]').value,
+    service:f.querySelector('select').value,
+    message:f.querySelector('textarea').value
+  };
+  const msg=`Olá Dialos! 👋\n*Nome:* ${data.name}\n*E-mail:* ${data.email}\n*WhatsApp:* ${data.phone}\n*Serviço:* ${data.service}\n*Mensagem:* ${data.message}`;
+  const wurl=`https://wa.me/5522999830246?text=${encodeURIComponent(msg)}`;
+  btn.textContent='✅ Mensagem enviada!';btn.style.background='#22c55e';
+  setTimeout(()=>{
+    window.open(wurl,'_blank');
+    btn.textContent='Enviar Mensagem';btn.disabled=false;btn.style.background='';
+    f.reset();
+  },1500);
+});
+console.log('🌐 DIALOS — www.dialos.com.br');
+</script>
+</body>
+</html>
