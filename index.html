@@ -171,6 +171,9 @@ ul{list-style:none}
 .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--blue-100)}
 .service-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-50);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px}
 .service-card h3{font-family:var(--font);font-size:1rem;font-weight:600;margin-bottom:8px;color:var(--navy-900)}
+.service-highlight{border:2px solid var(--estrato);background:linear-gradient(135deg,#fff,var(--blue-50));position:relative}
+.service-highlight .service-icon{background:rgba(var(--estrato-rgb),.12)}
+.service-badge{position:absolute;top:-1px;right:24px;background:var(--estrato);color:#fff;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 14px;border-radius:0 0 8px 8px;z-index:2}
 .service-card p{font-size:.88rem;color:var(--neutral-500);line-height:1.6}
 
 /* ============ DIFFERENTIALS ============ */
@@ -388,30 +391,46 @@ ul{list-style:none}
       <p>Da documentação à implementação, cuidamos de tudo para sua empresa estar em conformidade.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon">📋</div>
-        <h3>Consultoria em QSMS</h3>
-        <p>Gestão integrada de Qualidade, Segurança, Meio Ambiente e Saúde ocupacional.</p>
+      <div class="service-card service-highlight reveal reveal-delay-1">
+        <div class="service-badge">🔥 Destaque</div>
+        <div class="service-icon">🧠</div>
+        <h3>NR-01 — Riscos Psicossociais</h3>
+        <p><strong>Avaliação dos fatores de riscos psicossociais</strong> conforme a nova NR-01. Saúde mental no trabalho em conformidade com a legislação.</p>
       </div>
       <div class="service-card reveal reveal-delay-2">
         <div class="service-icon">📄</div>
-        <h3>Documentos Técnicos</h3>
-        <p>PPRA, PCMSO, LTCAT, PGR, laudos e relatórios de conformidade com as NRs.</p>
+        <h3>AEP — Análise Ergonômica Preliminar</h3>
+        <p>Identificação e avaliação dos riscos ergonômicos nas atividades laborais.</p>
       </div>
       <div class="service-card reveal reveal-delay-3">
-        <div class="service-icon">🏢</div>
-        <h3>Implementação SESMT</h3>
-        <p>Serviço Especializado em Engenharia de Segurança e Medicina do Trabalho completo.</p>
+        <div class="service-icon">📋</div>
+        <h3>AET — Análise Ergonômica do Trabalho</h3>
+        <p>Estudo completo das condições ergonômicas, conforme NR-17, com recomendações práticas.</p>
       </div>
       <div class="service-card reveal reveal-delay-1">
-        <div class="service-icon">👥</div>
-        <h3>Implementação CIPA</h3>
-        <p>Da formação à gestão da Comissão Interna de Prevenção de Acidentes.</p>
+        <div class="service-icon">🩺</div>
+        <h3>PCMSO</h3>
+        <p>Programa de Controle Médico de Saúde Ocupacional — exames admissionais, periódicos e demissionais.</p>
       </div>
       <div class="service-card reveal reveal-delay-2">
-        <div class="service-icon">🎓</div>
-        <h3>Treinamentos</h3>
-        <p>Cursos práticos e personalizados, presenciais ou remotos, sob medida.</p>
+        <div class="service-icon">📊</div>
+        <h3>PGR — Programa de Gerenciamento de Riscos</h3>
+        <p>Inventário de riscos e plano de ação. Documento obrigatório conforme NR-01 e NR-09.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">📑</div>
+        <h3>LTCAT</h3>
+        <p>Laudo Técnico das Condições Ambientais do Trabalho — para comprovação de insalubridade e periculosidade.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">⚠️</div>
+        <h3>Laudo de Insalubridade</h3>
+        <p>Laudo pericial para caracterização e quantificação de agentes insalubres no ambiente de trabalho.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">⚡</div>
+        <h3>Laudo de Periculosidade</h3>
+        <p>Laudo técnico para caracterização de atividades perigosas (explosivos, inflamáveis, energia elétrica).</p>
       </div>
       <div class="service-card reveal reveal-delay-3">
         <div class="service-icon">🌐</div>
