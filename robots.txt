@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.dialos.com.br/sitemap.xml
