@@ -53,7 +53,7 @@ img{max-width:100%;display:block}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:all .4s}
 .navbar.scrolled{background:rgba(12,35,64,.97);backdrop-filter:blur(20px);padding:8px 0;box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .navbar .inner{display:flex;align-items:center;justify-content:space-between}
-.navbar .logo img{height:34px;background:#fff;padding:8px 16px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:all .4s}
+.navbar .logo img{height:38px;transition:all .4s}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.75);transition:color .25s;position:relative}
 .nav-cta{box-shadow:0 4px 15px rgba(0,86,112,.25)!important}
@@ -176,7 +176,7 @@ img{max-width:100%;display:block}
 /* footer */
 .footer{background:var(--oxford);color:rgba(255,255,255,.55);padding:50px 0 24px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:24px}
-.footer-logo img{height:30px;margin-bottom:12px;background:#fff;padding:6px 12px;border-radius:8px}
+.footer-logo img{height:34px;margin-bottom:12px}
 .footer-brand p{font-size:.82rem;line-height:1.7;max-width:260px}
 .footer-links h5{color:#fff;font-size:.82rem;font-weight:600;margin-bottom:14px}
 .footer-links ul{display:flex;flex-direction:column;gap:8px}
@@ -215,7 +215,7 @@ img{max-width:100%;display:block}
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Dialos Consultoria em SST",
-  "image": "https://www.dialos.com.br/assets/logo.jpg",
+  "image": "https://www.dialos.com.br/assets/logo-dialos.svg",
   "url": "https://www.dialos.com.br",
   "telephone": "(22) 9 9983-0246",
   "email": "carlos@dialos.com.br",
@@ -250,7 +250,7 @@ img{max-width:100%;display:block}
 <body>
 <nav class="navbar" id="navbar">
   <div class="container inner">
-    <a href="#" class="logo"><img src="assets/logo.jpg" alt="Dialos"></a>
+    <a href="#" class="logo"><img src="assets/logo-dialos.svg" alt="Dialos" height="40"></a>
     <button class="nav-toggle" id="navTog" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#servicos">Serviços</a></li>
@@ -553,7 +553,7 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#"><img src="assets/logo.jpg" alt="Dialos" class="footer-logo"></a>
+        <a href="#"><img src="assets/logo-dialos.svg" alt="Dialos" class="footer-logo"></a>
         <p>Consultoria em Segurança e Saúde no Trabalho. Descomplicando o essencial.<br>📍 Macaé, RJ</p>
       </div>
       <div class="footer-links">
